@@ -1,0 +1,178 @@
+function HolaConsola(){
+    return "Hola mundo";
+}
+console.log(HolaConsola());
+function HolaNombre(texto){
+    nombre = prompt("ingrese su nombre"); 
+    texto = alert(`¡Hola,${nombre}!`);
+    return
+}
+HolaNombre("Ingrese su nombre")
+function NumeroDoble(){
+    let numero = prompt("Ingrese numero")
+    let doble = (numero *2)
+    alert(doble)
+}   
+NumeroDoble()
+
+calculo de IMC 
+let peso = 0 
+let altura = 0 
+function IMC(peso,altura){
+    peso = parseFloat(prompt("ingrese su peso:"));
+    altura = parseFloat(prompt("ingrese su altura:"));
+    calculo1 = (altura*altura)
+    calculo2 = (peso / calculo1).toFixed(2)
+    if(calculo2 >= 24.9){
+        alert(`su valor IMC es de: ${calculo2} tienes sobrepeso`)
+    }
+    else if (calculo2 <= 18.5){
+        alert(`su valor IMC es de: ${calculo2} tienes un bajo peso`)
+    }
+    else{
+        alert(`su valor IMC es de: ${calculo2} tienes un peso normal`)
+    }
+}
+IMC()
+function CalcularFactorizacion(numero){
+    let numero = parseInt(prompt("ingrese un numero:"))
+if (isNaN(numero)){
+    alert("por favor ingrese un numero")
+}else if(numero == 0){
+    alert("el valor factorial de 0 es 1, por favor ingrese un numero entre 1 y 20");
+    }else if (numero >= 21){
+    alert("Error, por favor ingrese un valor menor entre 1 y 20");
+}else{
+    calculoFactorial(numero);
+}
+function calculoFactorial(numero){
+    let resultado = 1 
+    for(let i = numero; i > 0; i--)
+        resultado *= i
+    alert(`el factorial de ${numero} es ${resultado}`)
+    console.log(resultado);
+}
+}
+Calculo de dolares a pesos colombianos 
+let dolares = parseFloat(prompt("Por favor ingrese la cantidad de dolares:"))
+let pesosColombianos = parseFloat(4000)
+CambioDeMoneda(pesosColombianos, dolares)
+function CambioDeMoneda (pesosColombianos, dolares){
+    let resultado = dolares * pesosColombianos
+    alert (`la cantidad en dolares es: ${resultado}`)
+}
+
+Calculo de Area y Perimetro de un rectangulo 
+let altura = parseFloat(prompt("Por favor ingrese la altura del rectangulo:"));
+let ancho = parseFloat(prompt("Por favor ingrese el ancho del rectangulo:"));
+if (isNaN(altura) || isNaN(ancho) || altura <= 0 || ancho <= 0){
+    alert("Por favor ingrese un numero o valor mayor a 0");
+}else{
+    CalculoPerimetro(altura,ancho);
+    CalculoArea(altura,ancho);
+}
+function CalculoPerimetro(altura, ancho){
+    let perimetro = 2 * (altura + ancho);
+    alert(`El perimetro del rectangulo es ${perimetro}m`);
+}
+function CalculoArea(altura, ancho){
+    let area = altura * ancho;
+    alert(`El area del rectangulo es: ${area}m²`);
+}
+
+Calculo de Area y Perimetro de un circulo 
+let radio = parseFloat(prompt("Por favor ingrese el radio del circulo:"));
+if (isNaN(radio) || radio <= 0){
+    alert("Por favor ingrese un numero o valor mayor a 0");
+}else{
+    CalculoPerimetro(radio);
+    CalculoArea(radio);
+}
+function CalculoPerimetro(radio){
+    let perimetro = 2 * Math.PI * radio;
+    alert(`El perimetro del circulo es ${perimetro.toFixed(2)}m`);
+}
+function CalculoArea(radio){
+    let area = Math.PI * (radio*radio)
+    alert(`El area del circulo es: ${area.toFixed(2)}m²`);
+}
+
+function mostrarTablaMultiplicar(numero) {
+    if (isNaN(numero) || numero <= 0) {
+        console.log("Por favor, ingrese un número válido mayor a 0.");
+        return;
+    }
+
+    console.log(`Tabla de multiplicar del ${numero}:`);
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${numero} x ${i} = ${numero * i}`);
+    }
+}
+
+// Pedir el número al usuario
+let numero = parseInt(prompt("Ingrese un número para ver su tabla de multiplicar:"));
+mostrarTablaMultiplicar(numero);
+let listaGenerica = [];
+let lenguajesDeProgramacion = ['javascript','C', 'C++','Kotlin','Python'];
+lenguajesDeProgramacion.push("Java", "Ruby", "GoLang");
+let PromedioNumeros = [8,4,6,2,10];
+let lista1 = [10,20,30,40,50];
+let lista2 = [2,4,6,8,10];
+function lenguajes(){
+    console.log(lenguajesDeProgramacion);
+}
+function lenguajesInverso(){
+    console.log(lenguajesDeProgramacion.reverse(lenguajesDeProgramacion));
+}
+function promedio(){
+    let suma = PromedioNumeros.reduce((acumulador, numero) => acumulador + numero, 0);
+    let division = suma / PromedioNumeros.length;
+    console.log(division);
+}
+function NumeroMayoryMenor(){
+    let mayor = Math.max(...PromedioNumeros);
+    let menor = Math.min(...PromedioNumeros);
+    console.log(mayor);
+    console.log(menor);
+}
+function SumaDeTodo(){
+    let suma2 = PromedioNumeros.reduce((acumulador, numero) => acumulador + numero, 0);
+    console.log(suma2);
+}
+function posicion(lista, numero){
+    if (!Array.isArray(lista)) { // Verifica que lista realmente sea un array
+        console.log("Error: La lista proporcionada no es un array.");
+        return;
+    }
+    let posicionLista = lista.indexOf(numero);
+    if (posicionLista !== -1){
+        console.log(`la posicion de ${numero} es ${posicionLista}`);
+    }else{
+        console.log(`la posicion de ${numero} no existe en la lista `);
+    }
+    }
+function sumaDeListas(lista1, lista2) {
+        if (lista1.length !== lista2.length) {
+            console.log("Las listas deben tener la misma longitud");
+            return;
+        }
+    
+        let lista3 = lista1.map((valor, indice) => valor + lista2[indice]);
+        console.log(lista3);
+    }
+function cuadrado(lista1){
+    let lista4 = lista1.map((valor) => valor * valor);
+    console.log(lista4);
+}
+cuadrado(lista1)
+sumaDeListas(lista1, lista2)
+posicion(PromedioNumeros,10)
+SumaDeTodo()
+NumeroMayoryMenor()
+promedio()
+lenguajes()
+lenguajesInverso()
+
+el codigo del juego:
+
+
